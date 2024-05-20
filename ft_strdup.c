@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 10:29:55 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/20 10:29:59 by wdaoudi-         ###   ########.fr       */
+/*   Created: 2024/05/20 17:53:09 by wdaoudi-          #+#    #+#             */
+/*   Updated: 2024/05/20 18:07:01 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_isalnum(int c)
+char *strdup(const char *s)
 {
-    if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-        return (1);
-    else
-        return (0);
+    int i;
+    char    *dest;
+    
+    while (s[i])
+        i ++;
+    *dest = malloc(sizeof(char) * i);
+    if (dest == 0)
+        return (NULL);
+    
+    i = 0;
+    while(s[i])
+    {
+        dest[i] = s[i];
+        i ++;    
+    }
+    dest[i] = 0;
+    return(dest);
 }

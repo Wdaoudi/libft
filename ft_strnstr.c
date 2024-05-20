@@ -1,19 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr_.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 10:29:55 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/20 10:29:59 by wdaoudi-         ###   ########.fr       */
+/*   Created: 2024/05/20 13:18:49 by wdaoudi-          #+#    #+#             */
+/*   Updated: 2024/05/20 17:18:26 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_isalnum(int c)
+char ft_strnstr(const char *str, const char *aiguille, size_t len)
 {
-    if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-        return (1);
-    else
-        return (0);
+    int i;
+    int j;
+    
+    i = 0;
+    j = 0;
+    if (!(aiguille[j]))
+        return (str);
+    while (str[i])
+    {
+        if(str[i] != aiguille[j])
+            i ++;
+        while(str[i] == aiguille[j] && j <= len)
+        {
+            i ++;
+            j ++;
+        }
+        j = 0;
+    }
+    return (str[i - j]);
 }

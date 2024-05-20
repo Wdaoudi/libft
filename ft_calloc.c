@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 10:29:55 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/20 10:29:59 by wdaoudi-         ###   ########.fr       */
+/*   Created: 2024/05/20 16:20:27 by wdaoudi-          #+#    #+#             */
+/*   Updated: 2024/05/20 17:52:10 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_isalnum(int c)
+void ft_calloc(size_t nmemb, size_t size)
 {
-    if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-        return (1);
-    else
-        return (0);
+    int i;
+
+    i = 0;
+    void *tab = malloc (sizeof(size) * nmemb);
+    if (tab == NULL)
+        return (NULL);
+    while(tab[i])
+    {
+        tab[i] = 0;
+        i ++;
+    }
 }

@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memmove_.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 10:29:55 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/20 10:29:59 by wdaoudi-         ###   ########.fr       */
+/*   Created: 2024/05/20 12:44:39 by wdaoudi-          #+#    #+#             */
+/*   Updated: 2024/05/20 12:52:56 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_isalnum(int c)
+void ft_memmove(void *dest, const void *src, size_t n)
 {
-    if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-        return (1);
-    else
-        return (0);
+    unsigned char   *ptr2;
+    unsigned char   *temp;
+    const unsigned char *ptr1;
+    size_t  i;
+    
+    ptr2 = (unsigned char *)dest;
+    ptr1 = (unsigned char *)src;
+
 }

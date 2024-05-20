@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memset_.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 10:29:55 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/20 10:29:59 by wdaoudi-         ###   ########.fr       */
+/*   Created: 2024/05/20 11:29:14 by wdaoudi-          #+#    #+#             */
+/*   Updated: 2024/05/20 12:36:09 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_isalnum(int c)
+
+void ft_memset(void *s, int c, size_t n);
 {
-    if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-        return (1);
-    else
-        return (0);
+    unsigned char *ptr;
+    
+    ptr = (unsigned char *)s;
+    while (n > 0)
+    {
+        *ptr = c;
+        ptr ++;
+        n --;
+    }
 }
