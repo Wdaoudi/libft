@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset_.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 11:29:14 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/20 12:36:09 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/21 11:33:50 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-void ft_memset(void *s, int c, size_t n);
+void	*ft_memset(void *s, int c, size_t n);
 {
-    unsigned char *ptr;
-    
-    ptr = (unsigned char *)s;
-    while (n > 0)
-    {
-        *ptr = c;
-        ptr ++;
-        n --;
-    }
+	unsigned char *ptr;
+
+	ptr = (unsigned char *)s;
+	while (n > 0)
+	{
+		*ptr = c;
+		ptr++;
+		n--;
+	}
 }

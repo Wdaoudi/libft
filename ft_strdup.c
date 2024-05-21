@@ -10,23 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char *strdup(const char *s)
+char	*strdup(const char *s)
 {
-    int i;
-    char    *dest;
-    
-    while (s[i])
-        i ++;
-    *dest = malloc(sizeof(char) * i);
-    if (dest == 0)
-        return (NULL);
-    
-    i = 0;
-    while(s[i])
-    {
-        dest[i] = s[i];
-        i ++;    
-    }
-    dest[i] = 0;
-    return(dest);
+	int i;
+	char *dest;
+
+	while (s[i])
+		i++;
+	*dest = malloc(sizeof(char) * i);
+	if (dest == 0)
+		return (NULL);
+
+	i = 0;
+	while (s[i])
+	{
+		dest[i] = s[i];
+		i++;
+	}
+	dest[i] = 0;
+	return (dest);
 }

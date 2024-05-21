@@ -6,18 +6,18 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 13:00:58 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/20 13:30:32 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/21 11:34:10 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-    int i;
+	int i;
 
-    i = 0;
-    if (s[i] == c)
-        return (s[i]);
-    else
-        i ++;
-    return (0);
+	i = 0;
+	if (s[i] == c)
+		return (s[i]);
+	else
+		i++;
+	return (0);
 }
