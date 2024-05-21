@@ -6,9 +6,11 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 10:29:47 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/20 11:50:06 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/21 12:06:22 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
 
 void	ft_bzero(void *s, size_t n)
 {

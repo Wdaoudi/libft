@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:20:27 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/21 11:32:56 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/21 12:12:25 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		tab[i] = 0;
 		i++;
 	}
+	return (tab);
 }

@@ -13,7 +13,8 @@ memchr
 
 #include <stddef.h>
 
-	void   *ft_memcpy(void *dest, const void *src, size_t n)
+	void *
+	ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char *ptr2;
 	const unsigned char *ptr1;
@@ -29,4 +30,5 @@ memchr
 		ptr2[i] = ptr1[i];
 		i++;
 	}
+	return (ptr2);
 }

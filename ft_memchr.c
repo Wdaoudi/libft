@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memchr_.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 11:29:14 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/21 15:01:08 by wdaoudi-         ###   ########.fr       */
+/*   Created: 2024/05/20 10:30:49 by wdaoudi-          #+#    #+#             */
+/*   Updated: 2024/05/21 12:03:38 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *s, int c, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char *ptr;
+	const unsigned char *str;
+	size_t i;
 
-	ptr = (unsigned char *)s;
-	while (n > 0)
+	str = s;
+	i = 0;
+	if (c = 0)
+		return (0);
+	while (s[i] && i <= n)
 	{
-		*ptr = c;
-		ptr++;
-		n--;
+		if (s[i] == c)
+			return (s[i]);
+		else
+			i++;
 	}
-	return (ptr);
+	return (NULL);
 }
