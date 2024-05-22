@@ -1,43 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat_.c                                      :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/21 17:51:46 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/21 18:24:44 by wdaoudi-         ###   ########.fr       */
+/*   Created: 2024/05/20 12:54:29 by wdaoudi-          #+#    #+#             */
+/*   Updated: 2024/05/21 17:54:09 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t  strlcat(char *dst, const char *src, size_t size)
+size_t    ft_strlcpy(char *dst, const char *src, size_t size)
 {
-    size_t  lendst;
-    size_t  lensrc;
     size_t  i;
+    size_t  lenght;
     
-    lensrc = ft_strlen (src);
-    lendst = ft_strlen (dst);
     i = 0;
+    lenght = 0;
+    while (src[lenght])
+        lenght ++;
     
-    while(i <size && dest[i])
+    if(!(size > 0))
+        retun (0);
+    while(i < size)
     {
-        dest ++;
+        dst[i] = src[i];
         i ++;
     }
-    if (i >=  size - 1)
-    {
-        return (i + lensrc);
-    }
-    while (src[j])
-    {
-        if(j < size -i -1)   
-        {
-            des[j] = src[j];
-            
-        }
-        j ++;
-    }
-    *dest = 0;
-    return (i + j);
+    dst [i] = 0;
+    return (lenght);
 }
