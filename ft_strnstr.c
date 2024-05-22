@@ -6,14 +6,14 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 13:18:49 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/21 11:35:21 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/22 14:26:13 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strnstr(const char *str, const char *aiguille, size_t len)
 {
-	int i;
-	int j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
