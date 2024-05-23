@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove_.c                                      :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:44:39 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/21 14:51:18 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/23 18:16:00 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <stddef.h>
+#include <string.h>
+#include <unistd.h>
+
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char *d;
-	const unsigned char *s;
+	char *d;
+	char *s;
 	size_t i;
-
-	d = (unsigned char *)dest;
-	s = (unsigned char *)src;
-
+	
+	if (!dest && !src)
+		return (NULL);
+	i = 0;
+	d = (char *)dest;
+	s = (char *)src;
+		
 	if (d > s)
 	{
-		while (n-- > 0)
+		while (n-- > 0) // n > 0 && n--
 			d[n] = s[n];
 	}
 	else
 	{
-		while (i < n)
+		while (i < n) // (i++ <len)
 		{
 			d[i] = s[i];
 			i++;
@@ -34,3 +43,14 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (d);
 }
+
+/*int main() {
+    char src[] = "Hello, world!";
+    char dest[20];
+    ft_memmove(dest, src + 7, 5); 
+    dest[5] = '\0';
+    printf("Original string: %s\n", src);
+    printf("Copied string: %s\n", dest);
+
+    return 0;
+}*/
