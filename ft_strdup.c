@@ -10,15 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strdup(const char *s)
+#include <stdio.h>
+#include <stdlib.h>
+#include <stddef.h>
+#include <string.h>
+#include <unistd.h>
+
+char	*ft_strdup(const char *s)
 {
-	int i;
+	size_t i;
 	char *dest;
 
+	i = 0;
 	while (s[i])
 		i++;
-	*dest = malloc(sizeof(char) * i);
-	if (dest == 0)
+	dest = malloc(sizeof(char) * i);
+	if (!dest)
 		return (NULL);
 
 	i = 0;
@@ -30,3 +37,28 @@ char	*strdup(const char *s)
 	dest[i] = 0;
 	return (dest);
 }
+
+/*int main()
+{
+    const char *original = "Hello, world!";
+    char *duplicate;
+
+    // Appel à la fonction ft_strdup
+    duplicate = ft_strdup(original);
+
+    // Vérification du résultat
+    if (duplicate != NULL)
+    {
+        printf("Original: %s\n", original);
+        printf("Duplicate: %s\n", duplicate);
+    }
+    else
+    {
+        printf("Failed to duplicate the string.\n");
+    }
+
+    // Libération de la mémoire allouée
+    free(duplicate);
+
+    return 0;
+}*/

@@ -19,19 +19,23 @@
 char	*ft_strchr(const char *s, int c)
 {
 	unsigned int i;
-	cc = (char) c;
-	
+    char cc;
 
+	cc = (char) c;
 	i = 0;
-	if (s[i] == c)
-		return ((char *) &s[i]);
-	else
-		i++;
-	return (NULL);
-	
+    while (s[i])
+	{
+        if (s[i] == cc)
+		    return ((char *) &s[i]);
+	    else
+		    i++;
+    }
+    if(s[i] == cc)
+        return ((char *) &s[i]);
+    return (NULL);
 }
 
-int main() {
+/*int main() {
     const char *str = "Hello, world!";
     char ch = 'o';
     
@@ -46,4 +50,4 @@ int main() {
     }
     
     return 0;
-}
+}*/
