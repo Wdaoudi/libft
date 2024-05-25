@@ -10,23 +10,44 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t    ft_strlcpy(char *dst, const char *src, size_t size)
+#include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-    size_t  i;
-    size_t  lenght;
-    
-    i = 0;
-    lenght = 0;
-    while (src[lenght])
-        lenght ++;
-    
-    if(!(size > 0))
-        retun (0);
-    while(i < size)
-    {
-        dst[i] = src[i];
-        i ++;
-    }
-    dst [i] = 0;
-    return (lenght);
+	size_t i;
+	size_t lenght;
+
+	i = 0;
+	lenght = 0;
+	while (src[lenght])
+		lenght++;
+
+	if (!(size > 0))
+		return(lenght);
+	while (i < size && src[i])
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = 0;
+	return (lenght);
 }
+
+/*int main(int ac, char **av) 
+{    
+	if (ac != 3)
+		return 0;
+	printf("dst avant: %s\n", av[1]); // dst
+	printf("src avant: %s\n", av[2]);
+    printf("taille maximale de copie: %lu\n", strlen(av[2])); // lenght de av[2]
+
+    size_t result = strlcpy(av[1], av[2], strlen((av[2])));
+    printf("dst: %s\n", av[1]); // dst
+	printf("src: %s\n", av[2]);
+    printf("longueur de src: %zu\n", result); // zu => imprimer un size_t
+    return 0;
+}*/

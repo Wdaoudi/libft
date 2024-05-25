@@ -10,65 +10,57 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_strlen.c"
+#include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stddef.h>
 #include <string.h>
 #include <unistd.h>
-size_t  ft_strlcat(char *dst, const char *src, size_t size)
+
+size_t	ft_strlen(char *str);
+
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-    size_t  lendst;
-    size_t  lensrc;
-    size_t  i;
-    size_t  j;
-    
-    lensrc = ft_strlen (src);
-    lendst = ft_strlen (dst);
-    i = 0;
-    
-    while(i <size && dst[i])
-    {
-        dst ++;
-        i ++;
-    }
-    if (i >=  size - 1)
-    {
-        return (i + lensrc);
-    }
-    while (src[j])
-    {
-        if(j < size -i -1)   
-        {
-            dst[j] = src[j];
-            
-        }
-        j ++;
-    }
-    *dst = 0;
-    return (i + j);
+	size_t	lendst;
+	size_t	lensrc;
+	size_t	i;
+
+	lendst = 0;
+	lensrc = ft_strlen((char *)src);
+	while (lendst < size && dst[lendst] != '\0')
+		lendst++;
+	if (lendst == size)
+		return (size + lensrc);
+	i = lendst;
+	for (size_t j = 0; src[j] != '\0' && i < size - 1; j++, i++)
+	{
+		dst[i] = src[j];
+	}
+	if (i < size)
+		dst[i] = '\0';
+	return (lendst + lensrc);
 }
 
-int main()
+/*int	main(void)
 {
-    char dst[20] = "Hello";
-    const char src[] = " World!";
-    size_t dstsize = sizeof(dst);
-    size_t result;
+	char		dst[20] = "Hello";
+	const char	src[] = " World!";
+	size_t		dstsize;
+	size_t		result;
+	char		dst_std[20] = "Hello";
+	size_t		result_std;
 
-    // Appel à la fonction ft_strlcat
-    result = ft_strlcat(dst, src, dstsize);
-
-    // Affichage des résultats
-    printf("Destination après strlcat: '%s'\n", dst);
-    printf("Longueur totale retournée par ft_strlcat: %zu\n", result);
-
-    // Comparaison avec strlcat standard
-    char dst_std[20] = "Hello";
-    size_t result_std = strlcat(dst_std, src, dstsize);
-
-    // Affichage des résultats pour la fonction standard
-    printf("Destination après strlcat (standard): '%s'\n", dst_std);
-    printf("Longueur totale retournée par strlcat (standard): %zu\n", result_std);
-
-    return 0;
-}
+	dstsize = sizeof(dst);
+	// Appel à la fonction ft_strlcat
+	result = ft_strlcat(dst, src, dstsize);
+	// Affichage des résultats
+	printf("Destination après strlcat: '%s'\n", dst);
+	printf("Longueur totale retournée par ft_strlcat: %zu\n", result);
+	// Comparaison avec strlcat standard
+	result_std = strlcat(dst_std, src, dstsize);
+	// Affichage des résultats pour la fonction standard
+	printf("Destination après strlcat (standard): '%s'\n", dst_std);
+	printf("Longueur totale retournée par strlcat (standard): %zu\n",
+		result_std);
+	return (0);
+}*/

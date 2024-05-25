@@ -10,24 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stddef.h>
 #include <string.h>
 #include <unistd.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char *d;
-	char *s;
-	size_t i;
-	
+	char	*d;
+	char	*s;
+	size_t	i;
+
 	if (!dest && !src)
 		return (NULL);
 	i = 0;
 	d = (char *)dest;
 	s = (char *)src;
-		
 	if (d > s)
 	{
 		while (n-- > 0) // n > 0 && n--
@@ -45,12 +44,12 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 }
 
 /*int main() {
-    char src[] = "Hello, world!";
-    char dest[20];
-    ft_memmove(dest, src + 7, 5); 
-    dest[5] = '\0';
-    printf("Original string: %s\n", src);
-    printf("Copied string: %s\n", dest);
+	char src[] = "Hello, world!";
+	char dest[20];
+	ft_memmove(dest, src + 7, 5);
+	dest[5] = '\0';
+	printf("Original string: %s\n", src);
+	printf("Copied string: %s\n", dest);
 
-    return 0;
+	return (0);
 }*/

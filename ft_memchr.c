@@ -10,27 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stddef.h>
 #include <string.h>
 #include <unistd.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char *str;
+	unsigned char	*str;
 	unsigned char	l;
-	size_t i;
+	size_t			i;
 
-	l = (unsigned char) c;
-	str =(unsigned char *) s;
+	l = (unsigned char)c;
+	str = (unsigned char *)s;
 	i = 0;
 	if (l == 0)
 		return (0);
 	while (i < n)
 	{
 		if (str[i] == l)
-			return ((void *) &str[i]);
+			return ((void *)&str[i]);
 		else
 			i++;
 	}
@@ -39,15 +39,15 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 /*int main()
 {
-    const char str[] = "Hello, World!";
-    char c = 'W';
-    char *result;
+	const char str[] = "Hello, World!";
+	char c = 'W';
+	char *result;
 
-    result = (char *)ft_memchr(str, c, sizeof(str));
-    if (result != NULL)
-        printf("Character '%c' found at position: %ld\n", c, result - str);
-    else
-        printf("Character '%c' not found\n", c);
+	result = (char *)ft_memchr(str, c, sizeof(str));
+	if (result != NULL)
+		printf("Character '%c' found at position: %ld\n", c, result - str);
+	else
+		printf("Character '%c' not found\n", c);
 
-    return 0;
+	return (0);
 }*/

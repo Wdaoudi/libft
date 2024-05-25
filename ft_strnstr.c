@@ -12,8 +12,8 @@
 
 char	*ft_strnstr(const char *str, const char *aiguille, size_t len)
 {
-	size_t	i;
-	size_t	j;
+	size_t i;
+	size_t j;
 
 	i = 0;
 	j = 0;

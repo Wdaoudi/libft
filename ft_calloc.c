@@ -11,61 +11,63 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int i;
+	int		i;
+	void	*tab;
 
 	i = 0;
-	void *tab = malloc(sizeof(size) * nmemb);
+	tab = malloc(sizeof(size) * nmemb);
 	if (tab == NULL)
 		return (NULL);
 	while (tab)
 	{
 		tab = 0;
-		tab ++;
+		tab++;
 	}
 	return (tab);
 }
 
-
 /*int main() {
-    size_t num_elements = 10;
-    size_t element_size = sizeof(int);
+	size_t num_elements = 10;
+	size_t element_size = sizeof(int);
 
-    // Utilisation de la fonction calloc standard
-    int *std_calloc_buffer = (int *)calloc(num_elements, element_size);
-    if (std_calloc_buffer == NULL) {
-        fprintf(stderr, "Échec de l'allocation mémoire avec la fonction standard calloc\n");
-        return 1;
-    }
+	// Utilisation de la fonction calloc standard
+	int *std_calloc_buffer = (int *)calloc(num_elements, element_size);
+	if (std_calloc_buffer == NULL) {
+		fprintf(stderr,
+			"Échec de l'allocation mémoire avec la fonction standard calloc\n");
+		return (1);
+	}
 
-    // Utilisation de votre fonction calloc
-    int *my_calloc_buffer = (int *)calloc(num_elements, element_size);
-    if (my_calloc_buffer == NULL) {
-        fprintf(stderr, "Échec de l'allocation mémoire avec votre fonction calloc\n");
-        free(std_calloc_buffer);
-        return 1;
-    }
+	// Utilisation de votre fonction calloc
+	int *my_calloc_buffer = (int *)calloc(num_elements, element_size);
+	if (my_calloc_buffer == NULL) {
+		fprintf(stderr,
+			"Échec de l'allocation mémoire avec votre fonction calloc\n");
+		free(std_calloc_buffer);
+		return (1);
+	}
 
-    // Affichage des valeurs des buffers
-    printf("Valeurs du buffer alloué par la fonction standard calloc :\n");
-    for (size_t i = 0; i < num_elements; i++) {
-        printf("%d ", std_calloc_buffer[i]);
-    }
-    printf("\n");
+	// Affichage des valeurs des buffers
+	printf("Valeurs du buffer alloué par la fonction standard calloc :\n");
+	for (size_t i = 0; i < num_elements; i++) {
+		printf("%d ", std_calloc_buffer[i]);
+	}
+	printf("\n");
 
-    printf("Valeurs du buffer alloué par votre fonction calloc :\n");
-    for (size_t i = 0; i < num_elements; i++) {
-        printf("%d ", my_calloc_buffer[i]);
-    }
-    printf("\n");
+	printf("Valeurs du buffer alloué par votre fonction calloc :\n");
+	for (size_t i = 0; i < num_elements; i++) {
+		printf("%d ", my_calloc_buffer[i]);
+	}
+	printf("\n");
 
-    // Libération de la mémoire allouée
-    free(std_calloc_buffer);
-    free(my_calloc_buffer);
+	// Libération de la mémoire allouée
+	free(std_calloc_buffer);
+	free(my_calloc_buffer);
 
-    return 0;
+	return (0);
 }*/

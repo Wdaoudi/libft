@@ -10,17 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stddef.h>
 #include <string.h>
 #include <unistd.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char *ptr2;
-	unsigned char *ptr1;
-	size_t i;
+	unsigned char	*ptr2;
+	unsigned char	*ptr1;
+	size_t			i;
 
 	ptr2 = (unsigned char *)dest;
 	ptr1 = (unsigned char *)src;
@@ -30,7 +30,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	while (i < n) // (n > 0)
 	{
 		ptr2[i] = ptr1[i]; // *(ptr2 ++) = *(ptr1 ++)
-		i++; // n --
+		i++;               // n --
 	}
 	return (dest);
 }
@@ -41,11 +41,11 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		return (0);
  printf("Source : %s\n", av[2]);
 
-    memcpy(av[1], av[2], atoi(av[3]));
+	memcpy(av[1], av[2], atoi(av[3]));
 
-    av[1][atoi(av[3])] = '\0';
+	av[1][atoi(av[3])] = '\0';
 
-    printf("Destination : %s\n", av[1]);
+	printf("Destination : %s\n", av[1]);
 
-    return 0;
+	return (0);
 }*/

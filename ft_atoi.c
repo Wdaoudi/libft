@@ -50,7 +50,7 @@ int	ft_atoi(const char *nptr)
 		return (0);
 	else
 	{
-		printf ("%d\n", ft_atoi(av[1]));		
+		printf ("%d\n", ft_atoi(av[1]));
 		printf ("%d\n", atoi(av[1]));
 	}
 	return (0);

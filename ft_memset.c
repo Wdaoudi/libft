@@ -10,15 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stddef.h>
 #include <string.h>
 #include <unistd.h>
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char *ptr;
+	unsigned char	*ptr;
 
 	ptr = (unsigned char *)s;
 	while (n > 0)
@@ -30,15 +30,15 @@ void	*ft_memset(void *s, int c, size_t n)
 	return (ptr);
 }
 
-/*int main() 
+/*int main()
 {
-    char str[50] = "Hello, world!";
+	char str[50] = "Hello, world!";
 
-    // Utilisation de ft_memset pour remplir les 6 premiers octets de str avec 'x'
-    ft_memset(str, 'o', 6);
+	// Utilisation de ft_memset pour remplir les 6 premiers octets de str avec 'x'
+	ft_memset(str, 'o', 6);
 
-    // Affichage du résultat
-    printf("Modified string: %s\n", str);
+	// Affichage du résultat
+	printf("Modified string: %s\n", str);
 
-    return 0;
+	return (0);
 }*/
