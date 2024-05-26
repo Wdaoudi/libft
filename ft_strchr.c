@@ -19,7 +19,7 @@
 char	*ft_strchr(const char *s, int c)
 {
 	size_t	i;
-	char			cc;
+	char	cc;
 
 	cc = (char)c;
 	i = 0;
@@ -37,8 +37,9 @@ char	*ft_strchr(const char *s, int c)
 
 /*int main(int ac, char **av)
 {
-    if (ac != 3)
-        return 0;
-    printf ("string : %s\n char : %s\n resultat: %s\n", av[1], av[2], ft_strchr(av[1], av[2][0]));
-    return 0;
+	if (ac != 3)
+		return (0);
+	printf ("string : %s\n char : %s\n resultat: %s\n", av[1], av[2],
+		ft_strchr(av[1], av[2][0]));
+	return (0);
 }*/

@@ -18,28 +18,29 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t i;
-    char cc;
+	size_t	i;
+	char	cc;
 
-    cc = (char)c;
+	cc = (char)c;
 	i = 0;
 	while (s[i])
 		i++;
-    while(i > 0)
-    {
-	    if (s[i] == cc)
-		    return ((char *)&s[i]); 
-	    i--;
-    }
-    if (s[i] == cc)
-        return((char *)&s[i]);
+	while (i > 0)
+	{
+		if (s[i] == cc)
+			return ((char *)&s[i]);
+		i--;
+	}
+	if (s[i] == cc)
+		return ((char *)&s[i]);
 	return (NULL);
 }
 
 /*int main(int ac, char **av)
 {
-    if (ac != 3)
-        return 0;
-    printf ("string : %s\n char : %s\n resultat: %s\n", av[1], av[2], ft_strrchr(av[1], av[2][0]));
-    return 0;
+	if (ac != 3)
+		return (0);
+	printf ("string : %s\n char : %s\n resultat: %s\n", av[1], av[2],
+		ft_strrchr(av[1], av[2][0]));
+	return (0);
 }*/
