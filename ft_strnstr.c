@@ -10,6 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+
 char	*ft_strnstr(const char *str, const char *aiguille, size_t len)
 {
 	size_t i;
@@ -18,17 +24,26 @@ char	*ft_strnstr(const char *str, const char *aiguille, size_t len)
 	i = 0;
 	j = 0;
 	if (!(aiguille[j]))
-		return (str);
-	while (str[i])
+		return ((char *)str);
+	while (str[i] && i < len)
 	{
-		if (str[i] != aiguille[j])
-			i++;
-		while (str[i] == aiguille[j] && j <= len)
-		{
-			i++;
-			j++;
-		}
-		j = 0;
+		        j = 0;
+        while (i + j < len && str[i + j] && aiguille[j] && str[i + j] == aiguille[j])
+        {
+            j++;
+        }
+        if (!aiguille[j])
+            return ((char *)&str[i]);
+        i++;
 	}
-	return (str[i - j]);
+	return (NULL);
 }
+
+/*int	main(int ac, char **av)
+{
+	if (ac < 2)
+		return 0;
+	printf("botte de foin : %s\n aiguille %s\n nombre de caractere cherche %d\n", av[1], av[2], atoi(av[3]));
+	printf("resultat %s\n", ft_strnstr(av[1], av[2], atoi(av[3])));
+	return 0;
+}*/

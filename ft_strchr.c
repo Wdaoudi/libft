@@ -18,7 +18,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	unsigned int	i;
+	size_t	i;
 	char			cc;
 
 	cc = (char)c;
@@ -35,20 +35,10 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-/*int main() {
-	const char *str = "Hello, world!";
-	char ch = 'o';
-
-	// Utilisation de ft_strchr pour trouver la première occurrence de 'o' dans str
-	char *result = ft_strchr(str, ch);
-
-	// Affichage du résultat
-	if (result != NULL) {
-		printf("The first occurrence of '%c' in \"%s\" is \"%s\"\n", ch, str,
-			result);
-	} else {
-		printf("Character '%c' not found in \"%s\"\n", ch, str);
-	}
-
-	return (0);
+/*int main(int ac, char **av)
+{
+    if (ac != 3)
+        return 0;
+    printf ("string : %s\n char : %s\n resultat: %s\n", av[1], av[2], ft_strchr(av[1], av[2][0]));
+    return 0;
 }*/

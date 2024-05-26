@@ -10,16 +10,36 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+
 char	*ft_strrchr(const char *s, int c)
 {
-	int i;
+	size_t i;
+    char cc;
 
+    cc = (char)c;
 	i = 0;
 	while (s[i])
 		i++;
-	if (s[i] == c)
-		return (s[i]);
-	else
-		i--;
-	return (0);
+    while(i > 0)
+    {
+	    if (s[i] == cc)
+		    return ((char *)&s[i]); 
+	    i--;
+    }
+    if (s[i] == cc)
+        return((char *)&s[i]);
+	return (NULL);
 }
+
+/*int main(int ac, char **av)
+{
+    if (ac != 3)
+        return 0;
+    printf ("string : %s\n char : %s\n resultat: %s\n", av[1], av[2], ft_strrchr(av[1], av[2][0]));
+    return 0;
+}*/
