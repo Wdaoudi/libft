@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 16:49:18 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/27 18:38:46 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/27 18:52:44 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	isset(const char s, const char *set)
 }
 char	*ft_strtrim(const char *s1, const char *set)
 {
-	char	*str;
+	char	*s2;
 	size_t	i;
 	size_t	j;
 	size_t	k;
@@ -36,22 +36,23 @@ char	*ft_strtrim(const char *s1, const char *set)
 	k = 0;
 	i = 0;
 	if (ft_strlen(s1) == 0)
-		return (ft_strdup(""));
+		return (ft_strdup(""));// verifier strdup
 	while (isset(s1[i], set) == 1)
 		i++;
 	j = ft_strlen(s1) - 1;
 	while (isset(s1[j], set) == 1)
 		j--;
-	str = malloc(sizeof(char) * (j - i + 1));
-	if (str == NULL)
+	s2 = malloc(sizeof(char) * (j - i + 1));
+	if (s2 == NULL)
 		return (NULL);
-	while (i <= j)
+	while (i <= j) //verifier si c est pas jsute i <
 	{
-		str[k] = s1[i];
+		s2[k] = s1[i];
 		k++;
 		i++;
 	}
-	return (str);
+	s2[k] = 0;
+	return (s2);
 }
 /*int	main(int ac, char **av)
 {
