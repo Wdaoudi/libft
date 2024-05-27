@@ -1,23 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat_.c                                      :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 17:51:46 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/21 18:24:44 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/27 16:20:24 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_strlen.c"
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-
-size_t	ft_strlen(char *str);
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -26,7 +19,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	i;
 
 	lendst = 0;
-	lensrc = ft_strlen((char *)src);
+	lensrc = ft_strlen((const char *) src);
 	while (lendst < size && dst[lendst] != '\0')
 		lendst++;
 	if (lendst == size)

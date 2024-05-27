@@ -6,13 +6,11 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 10:29:47 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/22 15:30:05 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/27 14:54:17 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

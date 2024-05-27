@@ -6,15 +6,11 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 13:18:49 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/22 14:26:13 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/27 14:50:00 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *str, const char *aiguille, size_t len)
 {

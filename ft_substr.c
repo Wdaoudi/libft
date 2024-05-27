@@ -1,42 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 13:11:46 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/27 14:50:04 by wdaoudi-         ###   ########.fr       */
+/*   Created: 2024/05/27 13:29:01 by wdaoudi-          #+#    #+#             */
+/*   Updated: 2024/05/27 16:10:15 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strdup(const char *s1);
+size_t	ft_strlen(const char *str);
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
-	char	cc;
+	char	*str;
 
-	cc = (char)c;
 	i = 0;
-	while (s[i])
-		i++;
-	while (i > 0)
+	if (!s)
+		return (NULL);
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	str = malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
+		return (NULL);
+	i = 0;
+	while (i < len)
 	{
-		if (s[i] == cc)
-			return ((char *)&s[i]);
-		i--;
+		str[i] = s[start + i];
+		i++;
 	}
-	if (s[i] == cc)
-		return ((char *)&s[i]);
-	return (NULL);
+	str[i] = 0;
+	return (str);
 }
 
-/*int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	if (ac != 3)
+	if (ac == 0)
 		return (0);
-	printf ("string : %s\n char : %s\n resultat: %s\n", av[1], av[2],
-		ft_strrchr(av[1], av[2][0]));
+	printf("%s", ft_substr(av[1], atoi(av[2]), atoi(av[3])));
 	return (0);
-}*/
+}
