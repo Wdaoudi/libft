@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 13:18:49 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/27 14:50:00 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/28 20:01:50 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strnstr(const char *str, const char *aiguille, size_t len)
 	{
 		j = 0;
 		while (i + j < len && str[i + j] && aiguille[j] && (str[i
-				+ j] == aiguille[j]))
+					+ j] == aiguille[j]))
 		{
 			j++;
 		}

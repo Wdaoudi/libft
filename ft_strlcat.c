@@ -50,6 +50,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	// Affichage des résultats
 	printf("Destination après strlcat: '%s'\n", dst);
 	printf("Longueur totale retournée par ft_strlcat: %zu\n", result);
-	
+
 	return (0);
 }*/
