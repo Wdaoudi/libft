@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:58:36 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/28 19:40:31 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/28 20:43:53 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	count_words(char const *s, char c)
 	}
 	return (n);
 }
+
 int	lenght_word(char const *s, char c, int i)
 {
 	int	n;
@@ -42,6 +43,7 @@ int	lenght_word(char const *s, char c, int i)
 		n++;
 	return (n);
 }
+
 char	**slip(char const *s, char c, char **str)
 {
 	size_t	i;

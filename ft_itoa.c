@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:59:23 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/28 16:07:24 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/28 20:45:01 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ char	*ft_itoa(int n)
 	{
 		return (int_min());
 	}
-	if (!(str = malloc(sizeof(char) * (i + 2))))
+	str = malloc(sizeof(char) * (i + 2));
+	if (!(str))
 		return (NULL);
 	str[i + 1] = '\0';
 	if (n < 0)

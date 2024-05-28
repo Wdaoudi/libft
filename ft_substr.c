@@ -6,14 +6,11 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 13:29:01 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/27 16:10:15 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/28 20:36:19 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	*ft_strdup(const char *s1);
-size_t	ft_strlen(const char *str);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -38,10 +35,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (str);
 }
 
-int	main(int ac, char **av)
+/*int	main(int ac, char **av)
 {
 	if (ac == 0)
 		return (0);
 	printf("%s", ft_substr(av[1], atoi(av[2]), atoi(av[3])));
 	return (0);
-}
+}*/

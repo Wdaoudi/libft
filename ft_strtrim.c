@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 16:49:18 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/27 19:16:57 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/28 20:39:05 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	isset(const char s, const char *set)
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	while (set[i])
@@ -26,6 +26,7 @@ static int	isset(const char s, const char *set)
 	}
 	return (0);
 }
+
 char	*ft_strtrim(const char *s1, const char *set)
 {
 	char	*s2;
@@ -36,7 +37,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	k = 0;
 	i = 0;
 	if (ft_strlen(s1) == 0)
-		return (ft_strdup("")); // verifier strdup
+		return (ft_strdup(""));
 	while (isset(s1[i], set) == 1)
 		i++;
 	j = ft_strlen(s1) - 1;
@@ -45,7 +46,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	s2 = malloc(sizeof(char) * (j - i + 1));
 	if (s2 == NULL)
 		return (NULL);
-	while (i <= j) // verifier si c est pas jsute i <
+	while (i <= j)
 	{
 		s2[k] = s1[i];
 		k++;
