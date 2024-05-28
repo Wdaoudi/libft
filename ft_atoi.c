@@ -28,7 +28,7 @@ int	ft_atoi(const char *nptr)
 		if (nptr[i] == 45)
 		{
 			signe = -signe;
-			i ++;
+			i++;
 		}
 		else if (nptr[i] == 43)
 			i++;

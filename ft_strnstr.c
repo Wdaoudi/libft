@@ -24,8 +24,8 @@ char	*ft_strnstr(const char *str, const char *aiguille, size_t len)
 	while (str[i] && i < len)
 	{
 		j = 0;
-		while (i + j < len && str[i + j] && aiguille[j]
-&& (str[i + j] == aiguille[j]))
+		while (i + j < len && str[i + j] && aiguille[j] && (str[i
+				+ j] == aiguille[j]))
 		{
 			j++;
 		}
