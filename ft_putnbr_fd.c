@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 21:01:03 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/28 14:57:28 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/28 15:00:33 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ void	ft_putnbr_fd(int n, int fd)
 		write(fd, &i, 1);
 	}
 }
-int	main(int ac, char **av)
+/*int	main(int ac, char **av)
 {
 	if (ac != 3)
 		return (0);
 	ft_putnbr_fd(ft_atoi(av[1]), ft_atoi(av[2]));
 	return (0);
-}
+}*/
