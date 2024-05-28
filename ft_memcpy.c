@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 10:30:58 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/27 14:54:38 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/28 19:43:16 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	if (ptr2[i] == 0 || ptr1[i] == 0)
 		return (dest);
-	while (i < n) // (n > 0)
+	while (i < n)
 	{
-		ptr2[i] = ptr1[i]; // *(ptr2 ++) = *(ptr1 ++)
-		i++;               // n --
+		ptr2[i] = ptr1[i];
+		i++;
 	}
 	return (dest);
 }
