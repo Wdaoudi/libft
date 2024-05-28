@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:53:09 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/27 14:54:48 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/28 21:37:53 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s)
 	i = 0;
 	while (s[i])
 		i++;
-	dest = malloc(sizeof(char) * i);
+	dest = malloc(sizeof(char) * (i + 1));
 	if (!dest)
 		return (NULL);
 	i = 0;
@@ -33,27 +33,32 @@ char	*ft_strdup(const char *s)
 	return (dest);
 }
 
-/*int main()
-{
-	const char *original = "Hello, world!";
-	char *duplicate;
+// // int main() {
+// //     // Cas de test
+// //     const char *test_cases[] = {
+// //         "Hello, world!",     // Chaîne normale
+// //         "",                  // Chaîne vide
+// //         "A",                 // Chaîne d'un caractère
+// //         "This is a longer string to test the strdup function.", 
+// 	// Chaîne plus longue
+// //         "String with special characters!@#$$%^&*()_+",
+// 	// Chaîne avec caractères spéciaux
+// //         NULL                // Fin des tests
+// //     };
 
-	// Appel à la fonction ft_strdup
-	duplicate = ft_strdup(original);
+// //     for (int i = 0; test_cases[i] != NULL; i++) {
+// //         char *duplicate = ft_strdup(test_cases[i]);
 
-	// Vérification du résultat
-	if (duplicate != NULL)
-	{
-		printf("Original: %s\n", original);
-		printf("Duplicate: %s\n", duplicate);
-	}
-	else
-	{
-		printf("Failed to duplicate the string.\n");
-	}
+// //         if (duplicate) {
+// //             printf("Original: \"%s\"\nDuplicate: \"%s\"\n", test_cases[i],
+// 	duplicate);
+// //             free(duplicate); // Libérer la mémoire allouée
+// //         } else {
+// //             printf("ft_strdup a retourné NULL pour l'entrée: \"%s\"\n",
+// 	test_cases[i]);
+// //         }
+// //         printf("\n");
+// //     }
 
-	// Libération de la mémoire allouée
-	free(duplicate);
-
-	return (0);
-}*/
+// //     return (0);
+// // }

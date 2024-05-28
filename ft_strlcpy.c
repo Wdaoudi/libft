@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:54:29 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/27 14:49:48 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/28 21:09:01 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		lenght++;
 	if (!(size > 0))
 		return (lenght);
-	while (i < size && src[i])
+	while (i < size - 1 && src[i])
 	{
 		dst[i] = src[i];
 		i++;

@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:58:36 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/28 20:43:53 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/28 21:50:15 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int	count_words(char const *s, char c)
 	}
 	return (n);
 }
-
 int	lenght_word(char const *s, char c, int i)
 {
 	int	n;
@@ -59,7 +58,7 @@ char	**slip(char const *s, char c, char **str)
 		k = 0;
 		str[j] = malloc(sizeof(char) * (lenght_word(s, c, i) + 1));
 		if (str[j] == NULL)
-			return (NULL);
+			ft_free()	// creer une fonction pour free tout les tableaux en cas d echec free le sous tableau en k --puis  le tableau principal
 		while (s[i] && s[i] != c)
 			str[j][k++] = s[i++];
 		str[j][k] = 0;
@@ -70,7 +69,6 @@ char	**slip(char const *s, char c, char **str)
 	str[j] = 0;
 	return (str);
 }
-
 char	**ft_split(char const *s, char c)
 {
 	char	**str;
@@ -81,6 +79,7 @@ char	**ft_split(char const *s, char c)
 	str = slip(s, c, str);
 	return (str);
 }
+
 // int	main(void)
 // {
 // 	char	str[] = "    H,e,ll,,,o w,orl,,,,d ,thi,,s, is,, a, t,e,s,t, ,,,";

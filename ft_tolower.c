@@ -6,13 +6,13 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 10:31:22 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/28 20:35:54 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/28 20:53:51 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+int	ft_tolower(int c)
 {
 	if ((c >= 65 && c <= 90))
 		return (c + 32);

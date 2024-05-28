@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 11:29:14 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/27 14:54:42 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/28 20:58:37 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memset(void *s, int c, size_t n)
 		ptr++;
 		n--;
 	}
-	return (ptr);
+	return (s);
 }
 
 /*int main()
