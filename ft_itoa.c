@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:59:23 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/28 20:45:01 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/30 15:07:58 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,16 @@ int	taille(int n)
 	return (i);
 }
 
+char	*zero(void)
+{
+	char	*str;
+
+	str = malloc(sizeof(char) * 2);
+	str[0] = 48;
+	str[1] = 0;
+	return (str);
+}
+
 char	*int_min(void)
 {
 	char	*temp;
@@ -38,12 +48,13 @@ char	*int_min(void)
 
 	i = 0;
 	temp = "-2147483648";
-	str = malloc(sizeof(char) * 12);
+	str = malloc(sizeof(char) * 13);
 	while (temp[i])
 	{
 		str[i] = temp[i];
 		i++;
 	}
+	str[i] = 0;
 	return (str);
 }
 
@@ -53,10 +64,10 @@ char	*ft_itoa(int n)
 	char	*str;
 
 	i = taille(n);
+	if (n == 0)
+		return (zero());
 	if (n == -2147483648)
-	{
 		return (int_min());
-	}
 	str = malloc(sizeof(char) * (i + 2));
 	if (!(str))
 		return (NULL);
@@ -75,24 +86,24 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-/*int	main(void)
-{
-	int numbers[] = {123, -456, 0, 2147483647, -2147483648};
-	size_t num_count = sizeof(numbers) / sizeof(numbers[0]);
+// int	main(void)
+// {
+// 	int numbers[] = {0LL, -2147483648LL};
+// 	size_t num_count = sizeof(numbers) / sizeof(numbers[0]);
 
-	for (size_t i = 0; i < num_count; i++)
-	{
-		char *str = ft_itoa(numbers[i]);
-		if (str)
-		{
-			printf("Integer: %d -> String: %s\n", numbers[i], str);
-			free(str);
-		}
-		else
-		{
-			printf("Memory allocation failed for integer: %d\n", numbers[i]);
-		}
-	}
+// 	for (size_t i = 0; i < num_count; i++)
+// 	{
+// 		char *str = ft_itoa(numbers[i]);
+// 		if (str)
+// 		{
+// 			printf("Integer: %d -> String: %s\n", numbers[i], str);
+// 			free(str);
+// 		}
+// 		else
+// 		{
+// 			printf("Memory allocation failed for integer: %d\n", numbers[i]);
+// 		}
+// 	}
 
-	return (0);
-}*/
+// 	return (0);
+// }
