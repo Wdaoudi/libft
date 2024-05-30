@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:58:36 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/30 13:13:32 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/30 16:54:58 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ char	**slip(char const *s, char c, char **str)
 	while (s[i])
 	{
 		k = 0;
-		str[j] = malloc(sizeof(char) * (lenght_word(s, c, i) + 1));
+		str[j] = ft_calloc(sizeof(char) * (lenght_word(s, c, i) + 1));
 		if (str[j] == NULL)
 			return (ft_free(str, i));
 		while (s[i] && s[i] != c)
@@ -81,7 +81,7 @@ char	**slip(char const *s, char c, char **str)
 			i++;
 		j++;
 	}
-	str[j] = 0;
+	str[j] = 0; /*verifier les \0 avec les callco sur split*/
 	return (str);
 }
 
@@ -89,7 +89,7 @@ char	**ft_split(char const *s, char c)
 {
 	char	**str;
 
-	str = malloc(sizeof(char *) * (count_words(s, c) + 1));
+	str = ft_calloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (str == NULL)
 		return (str);
 	str = slip(s, c, str);

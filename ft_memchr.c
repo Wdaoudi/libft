@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 10:30:49 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/30 15:15:19 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/30 15:34:31 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	l = (unsigned char)c;
 	str = (unsigned char *)s;
 	i = 0;
-	if (l == 0)
-		return (0);
 	while (i < n)
 	{
 		if (str[i] == l)
