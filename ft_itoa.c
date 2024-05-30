@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:59:23 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/30 15:07:58 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/30 18:25:19 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*int_min(void)
 
 	i = 0;
 	temp = "-2147483648";
-	str = malloc(sizeof(char) * 13);
+	str = malloc(sizeof(char) * 12);
 	while (temp[i])
 	{
 		str[i] = temp[i];

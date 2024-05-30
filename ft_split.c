@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:58:36 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/30 16:54:58 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/05/30 19:27:44 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,16 @@ int	count_words(char const *s, char c)
 
 	i = 0;
 	n = 0;
-	while (s[i] == c)
-		i++;
 	while (s[i])
 	{
-		if (s[i - 1] == c && s[i] != c)
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i] && s[i] != c)
 		{
 			n++;
-			i++;
+			while (s[i] && s[i] != c)
+				i++;
 		}
-		else
-			i++;
 	}
 	return (n);
 }
@@ -66,22 +65,22 @@ char	**slip(char const *s, char c, char **str)
 
 	i = 0;
 	j = 0;
-	while (s[i] == c)
+	while (s[i] == c && s[i])
 		i++;
 	while (s[i])
 	{
 		k = 0;
-		str[j] = ft_calloc(sizeof(char) * (lenght_word(s, c, i) + 1));
+		str[j] = malloc((lenght_word(s, c, i) + 1) * sizeof(char));
 		if (str[j] == NULL)
-			return (ft_free(str, i));
+			return (ft_free(str, j));
 		while (s[i] && s[i] != c)
 			str[j][k++] = s[i++];
 		str[j][k] = 0;
-		while (s[i] == c)
+		while (s[i] == c && s[i])
 			i++;
 		j++;
 	}
-	str[j] = 0; /*verifier les \0 avec les callco sur split*/
+	str[j] = NULL;
 	return (str);
 }
 
@@ -89,23 +88,21 @@ char	**ft_split(char const *s, char c)
 {
 	char	**str;
 
-	str = ft_calloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!s)
+		return (NULL);
+	str = malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (str == NULL)
 		return (str);
-	str = slip(s, c, str);
-	return (str);
+	return (slip(s, c, str));
 }
 
 // int	main(void)
 // {
-// 	char	str[] = "    H,e,ll,,,o w,orl,,,,d ,thi,,s, is,, a, t,e,s,t, ,,,";
-// 	char	delimiter;
-// 	char	**result;
-// 	int		i;
+// 	char **result;
+// 	int i;
 
-// 	delimiter = ',';
 // 	// Appel à ft_split
-// 	result = ft_split(str, delimiter);
+// 	result = ft_split("tripouille", 0);
 // 	// Vérification et affichage des résultats
 // 	if (result)
 // 	{
