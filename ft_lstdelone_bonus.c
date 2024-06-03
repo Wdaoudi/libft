@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:31:56 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/06/03 15:13:11 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:47:09 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (!del)
-		return ();
-    if(lst)
-    {
-        del(lst->content);
-        free(lst);
-    }
+		return ;
+	if (lst)
+	{
+		del(lst->content);
+		free(lst);
+	}
 }

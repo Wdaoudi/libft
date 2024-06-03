@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:13:35 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/06/03 15:03:24 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:47:34 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!lst || !new)
-		return ();
+		return;
 	new->next = *lst;
 	*lst = new;
 }
