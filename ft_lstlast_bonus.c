@@ -6,9 +6,11 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:24:26 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/06/01 18:29:08 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/06/03 14:31:19 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {
@@ -20,5 +22,5 @@ t_list	*ft_lstlast(t_list *lst)
 		lst = lst->next;
 		i++;
 	}
-    return (lst);
+	return (lst);
 }
