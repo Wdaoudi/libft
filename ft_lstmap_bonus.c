@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:12:02 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/06/04 15:54:16 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/06/04 19:46:13 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list listt;
-	t_list maillon;
+	t_list *listt;
+	t_list *maillon;
 
 	if (!lst || !f || !del)
 		return (NULL);
@@ -31,12 +31,12 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		ft_lstadd_back(&listt, maillon);
 		lst = lst->next;
 	}
-	return (*listt);
+	return (listt);
 }
-void *to_upper(void *content) {
-    char *str = strdup((char *)content);
+void *touppper(void *content) {
+    char *str = ft_strdup((char *)content);
     for (int i = 0; str[i]; i++)
-        str[i] = toupper(str[i]);
+        str[i] = touppper(str[i]);
     return str;
 }
 
@@ -49,7 +49,7 @@ int main() {
     t_list *second = ft_lstnew("second");
     ft_lstadd_back(&head, second);
 
-    t_list *new_list = ft_lstmap(head, to_upper, del);
+    t_list *new_list = ft_lstmap(head, touppper, del);
     ft_lstiter(new_list, print_content);
     ft_lstclear(&new_list, del); // Clean up new_list to avoid memory leaks
     ft_lstclear(&head, del); // Clean up head to avoid memory leaks

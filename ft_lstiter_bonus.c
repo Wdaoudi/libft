@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:11:39 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/06/04 15:51:35 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/06/04 19:41:20 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ void print_content(void *content) {
     printf("%s\n", (char *)content);
 }
 
-int main() {
-    t_list *head = ft_lstnew("First");
-    t_list *second = ft_lstnew("Second");
-    ft_lstadd_back(&head, second);
+// int main() {
+//     t_list *head = ft_lstnew("First");
+//     t_list *second = ft_lstnew("Second");
+//     ft_lstadd_back(&head, second);
 
-    ft_lstiter(head, print_content);
-    return 0;
-}
+//     ft_lstiter(head, print_content);
+//     return 0;
+// }
 
 //first 
 // second
