@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:31:56 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/06/04 12:52:11 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/06/04 15:51:08 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,3 +22,19 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 		free(lst);
 	}
 }
+void del(void *content) {
+    free(content);
+}
+
+int main() {
+    t_list *node = ft_lstnew(malloc(6));
+    if (node != NULL) {
+        strcpy(node->content, "Hello");
+        ft_lstdelone(node, del);
+        printf("Node deleted\n");
+    } else {
+        printf("ft_lstdelone failed\n");
+    }
+    return 0;
+}
+// Node deleted
