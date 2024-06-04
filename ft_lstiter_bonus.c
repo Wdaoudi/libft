@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:11:39 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/06/04 19:41:20 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/06/04 19:52:59 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		lst = lst->next;
 	}
 }
-void print_content(void *content) {
-    printf("%s\n", (char *)content);
-}
+// void print_content(void *content) {
+//     printf("%s\n", (char *)content);
+// }
 
 // int main() {
 //     t_list *head = ft_lstnew("First");
