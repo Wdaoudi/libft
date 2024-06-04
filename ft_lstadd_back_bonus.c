@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:26:55 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/06/03 18:47:27 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/06/04 12:51:24 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *last;
+	t_list		*last;
 
 	if (!lst || !new)
-		return;
+		return ;
 	last = ft_lstlast(*lst);
 	if (!lst)
 		*lst = new;

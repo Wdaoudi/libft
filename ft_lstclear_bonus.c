@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:11:20 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/06/03 18:47:15 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/06/04 12:59:12 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *lstt;
+	t_list		*lstt;
 
 	while (lst)
 	{
