@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:58:36 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/05/30 19:27:44 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/06/04 13:11:54 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,16 +101,13 @@ char	**ft_split(char const *s, char c)
 // 	char **result;
 // 	int i;
 
-// 	// Appel à ft_split
 // 	result = ft_split("tripouille", 0);
-// 	// Vérification et affichage des résultats
 // 	if (result)
 // 	{
 // 		for (i = 0; result[i] != NULL; i++)
 // 		{
 // 			printf("result[%d]: %s\n", i, result[i]);
 // 		}
-// 		// Libération de la mémoire allouée par ft_split
 // 		for (i = 0; result[i] != NULL; i++)
 // 		{
 // 			free(result[i]);
