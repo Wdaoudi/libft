@@ -6,48 +6,88 @@
 #    By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/28 20:49:13 by wdaoudi-          #+#    #+#              #
-#    Updated: 2024/06/05 12:29:37 by wdaoudi-         ###   ########.fr        #
+#    Updated: 2024/06/05 13:59:44 by wdaoudi-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
-       ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c \
-       ft_memcpy.c ft_memmove.c ft_strlcpy.c ft_strlcat.c \
-       ft_calloc.c ft_strdup.c ft_toupper.c ft_tolower.c \
-       ft_strchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c \
-       ft_strnstr.c ft_atoi.c ft_strrchr.c ft_substr.c \
-       ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
-       ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
-       ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
-SRCSB = ft_lstnew_bonus.c ft_lstadd_front_bonus.c \
-	ft_lstsize_bonus.c ft_lstlast_bonus.c \
-	ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
-	ft_lstclear_bonus.c ft_lstiter_bonus.c \
-	ft_lstmap_bonus.c
-OBJS = ${SRCS:.c=.o}
-OBJSB = ${SRCSB:.c=.o}
+SRCS = ft_memset.c        \
+        ft_bzero.c        \
+        ft_memcpy.c        \
+        ft_memmove.c     \
+        ft_memchr.c        \
+        ft_memcmp.c        \
+        ft_strlen.c        \
+        ft_isalpha.c     \
+        ft_isdigit.c        \
+        ft_isalnum.c        \
+        ft_isascii.c        \
+        ft_isprint.c        \
+        ft_toupper.c        \
+        ft_tolower.c        \
+        ft_strchr.c        \
+        ft_strrchr.c        \
+        ft_strncmp.c        \
+        ft_strlcpy.c        \
+        ft_strlcat.c        \
+        ft_strnstr.c        \
+        ft_atoi.c        \
+        ft_calloc.c        \
+        ft_strdup.c        \
+        ft_striteri.c       \
+        ft_substr.c        \
+        ft_strjoin.c     \
+        ft_strtrim.c        \
+        ft_split.c        \
+        ft_itoa.c        \
+        ft_strmapi.c        \
+        ft_putchar_fd.c    \
+        ft_putstr_fd.c    \
+        ft_putendl_fd.c    \
+        ft_putnbr_fd.c
+
+SRCSB =    ft_lstnew.c            \
+        ft_lstadd_front.c    \
+        ft_lstsize.c        \
+        ft_lstlast.c        \
+        ft_lstadd_back.c    \
+        ft_lstclear.c        \
+        ft_lstdelone.c        \
+        ft_lstiter.c        \
+        ft_lstmap.c            \
+        $(SRCS)
+
 NAME = libft.a
-LIBC = ar rcs
-CC = cc
-RM = rm -f
-CFLAGS = -Wall -Wextra -Werror
 
-.c.o:
-	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+OBJS_DIR = objs/
+OBJS = $(SRCS:.c=.o)
+OBJECTS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
 
-${NAME}: ${OBJS}
-	${LIBC} ${NAME} ${OBJS}
+OBJSB = $(SRCSB:.c=.o)
+OBJECTS_BONUS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJSB))
 
-all: ${NAME}
+CC = clang
 
-bonus: ${NAME} ${OBJSB}
-	${LIBC} ${NAME} ${OBJSB}
+CC_FLAGS = -Wall -Wextra -Werror
+
+$(OBJS_DIR)%.o : %.c libft.h
+@mkdir -p $(OBJS_DIR)
+@echo "Compiling: $<"
+@clang $(CC_FLAGS) -c $< -o $@
+
+$(NAME): $(OBJECTS_PREFIXED)
+@ar r $(NAME) $(OBJECTS_PREFIXED)
+@echo "Libft Done !"
+
+all: $(NAME)
+
 clean:
-	${RM} ${OBJS} ${OBJSB}
+rm -rf $(OBJS_DIR)
 
 fclean: clean
-	${RM} ${NAME} ${bonus} 
+rm -f $(NAME)
 
 re: fclean all
 
-.PHONY : all bonus clean fclean re
+bonus: $(OBJECTS_BONUS_PREFIXED)
+@ar r $(NAME) $(OBJECTS_BONUS_PREFIXED)
+@echo "Libft Bonus Done !"
