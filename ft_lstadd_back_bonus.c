@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:26:55 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/06/04 19:14:10 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/06/05 13:16:14 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,15 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list		*last;
+	t_list			*tmp;
 
-	last = ft_lstlast(*lst);
-	if (!last)
+	if (!new)
 		return ;
-	if (!last)
+	if (!*lst)
+	{
 		*lst = new;
-	last->next = new;
+		return ;
+	}
+	tmp = ft_lstlast(*lst);
+	tmp->next = new;
 }
-// int main() {
-//     t_list *head = ft_lstnew("First");
-//     t_list *new_node = ft_lstnew("Second");
-//     ft_lstadd_back(&head, new_node);
-//     t_list *last = ft_lstlast(head);
-//     if (last != NULL)
-//         printf("Last Node: %s\n", (char *)last->content);
-//     else
-//         printf("ft_lstadd_back or ft_lstlast failed\n");
-//     return 0;
-// }
-//last node : second
-
