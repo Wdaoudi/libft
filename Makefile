@@ -6,7 +6,7 @@
 #    By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/28 20:49:13 by wdaoudi-          #+#    #+#              #
-#    Updated: 2024/06/05 13:59:44 by wdaoudi-         ###   ########.fr        #
+#    Updated: 2024/06/05 15:38:57 by wdaoudi-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,24 +70,24 @@ CC = clang
 CC_FLAGS = -Wall -Wextra -Werror
 
 $(OBJS_DIR)%.o : %.c libft.h
-@mkdir -p $(OBJS_DIR)
-@echo "Compiling: $<"
-@clang $(CC_FLAGS) -c $< -o $@
+	@mkdir -p $(OBJS_DIR)
+	@echo "Compiling: $<"
+	@clang $(CC_FLAGS) -c $< -o $@
 
 $(NAME): $(OBJECTS_PREFIXED)
-@ar r $(NAME) $(OBJECTS_PREFIXED)
-@echo "Libft Done !"
+	@ar r $(NAME) $(OBJECTS_PREFIXED)
+	@echo "Libft Done !"
 
 all: $(NAME)
 
 clean:
-rm -rf $(OBJS_DIR)
+	rm -rf $(OBJS_DIR)
 
 fclean: clean
-rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
 bonus: $(OBJECTS_BONUS_PREFIXED)
-@ar r $(NAME) $(OBJECTS_BONUS_PREFIXED)
-@echo "Libft Bonus Done !"
+	@ar r $(NAME) $(OBJECTS_BONUS_PREFIXED)
+	@echo "Libft Bonus Done !"
