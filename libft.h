@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 14:28:19 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/06/04 13:39:15 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/06/05 16:10:16 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,6 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 t_list				*ft_lstnew(void *content);
 int					ft_lstsize(t_list *lst);
+void				ft_striteri(char *s, void (*f)(unsigned int, char *));
+
 #endif
