@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:58:36 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/06/05 16:57:50 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/10/07 19:59:08 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ void	*ft_free(char **str, int count)
 	int	i;
 
 	i = 0;
+	if (!str)
+		return (NULL);
 	while (i < count)
 	{
 		free(str[i]);
@@ -101,7 +103,7 @@ char	**ft_split(char const *s, char c)
 // 	char **result;
 // 	int i;
 
-// 	result = ft_split("tripouille", 0);
+// 	result = ft_split("          tripouille dfgfdg rgnor r        suh  oisefhis      b      ", 32);
 // 	if (result)
 // 	{
 // 		for (i = 0; result[i] != NULL; i++)
