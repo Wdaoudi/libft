@@ -6,7 +6,7 @@
 /*   By: wdaoudi- <wdaoudi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 14:28:19 by wdaoudi-          #+#    #+#             */
-/*   Updated: 2024/10/10 18:25:13 by wdaoudi-         ###   ########.fr       */
+/*   Updated: 2024/10/18 19:42:15 by wdaoudi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,6 @@ char				*get_next_line(int fd);
 
 /* supp */
 
-void				ft_free(void *elem);
+char				*ft_strjoin_free(char *s1, char *s2);
 
 #endif
